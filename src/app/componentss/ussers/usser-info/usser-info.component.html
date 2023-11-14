@@ -1,0 +1,7 @@
+<p><b><u>usser-info component</u></b></p>
+<h2>{{item.name | titlecase | uppercase}}</h2> 
+<p>DOB : <span [innerHTML]="item.dob | date:'dd/MM/yyyy'"></span></p>    
+<p>Income : {{item.income | currency :"EUR"}}</p>
+<div class="text">
+    <button class="btn btn-info btn-primary" (click)="onMoreInfo(item)"><b><u>Greet</u></b></button>
+</div>  

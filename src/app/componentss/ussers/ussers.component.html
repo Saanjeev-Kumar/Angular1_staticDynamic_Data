@@ -1,0 +1,29 @@
+<p>ussers works!</p>
+<!-- <p>{{ userCollection | json}}</p> -->
+<ul class="list-unstyled list-group">
+    <li class="list-group-item" *ngFor="let item of userCollection ">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <img [src]="item.image" class="rounded-circle img-fluid">
+                        <div class="text-center">
+                            <button style="color:red;background-color:black"class="btn btn-info btn-primary" 
+                                (click)="onMoreInfo(item)"><small><small>Info</small></small>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-md-9">
+                        <app-usser-info [item]="item" (onChildEvent)="onInfo($event)"></app-usser-info>
+                        <!-- <h2>{{item.name | titlecase | uppercase}}</h2> 
+                        <p>DOB : <span [innerHTML]="item.dob | date:'dd/MM/yyyy'"></span></p>    
+                        <!--Property Binding--><!--
+                        <p>Income : {{item.income | currency :"EUR"}}</p>    -->
+                        <!--Interpullation-->
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </li>
+</ul>

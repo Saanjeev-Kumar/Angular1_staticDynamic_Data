@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DaataService } from './servicess/daata.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'users-app';
+  constructor (private dataService: DaataService) {}
+
+  ngOnInit() {
+    // this.dataService.fetchUsers();  // 1st way
+  }
 }
